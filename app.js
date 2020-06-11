@@ -38,8 +38,9 @@ app.listen(port, () => {
     dbInit(function(dbRes){
         console.log("db connection success", dbRes);
         setInterval(function() {
+            //schedular will run every 2 mins
             console.log("initiate batch job");
             processor.processBatchRequests();
-        },10000);
+        },120000);
     });
 });
